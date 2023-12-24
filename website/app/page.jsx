@@ -1,10 +1,16 @@
 import SignIn from "@/components/signIn";
-export default function Home() {
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
+import { authOptions } from "./api/auth/[...nextauth]/route"
+export default async function Home() {
+  const session = await getServerSession(authOptions)
+  if(session)
+    redirect("/data")
   return <main>
     
             
       <SignIn/>
-            
+      
         </main>
   
 }
