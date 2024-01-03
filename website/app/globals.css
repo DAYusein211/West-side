@@ -2,7 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Inria+Serif:wght@300&display=swap');
+
+
+:root
+{
+    
+    background-color: black;
+}
+.myFont
+{
+    
+    
+    font-family: 'Inika', serif;
+
+    font-family: 'Inria Serif', serif;
+}
+.spacing
+{
+    letter-spacing: 3px;
+}
 input 
 {
-    @apply w-[200px] border-gray-200 py-1 px-5 bg-blue-500 text-black;
+    
+   @apply w-[150px]  py-1 px-2 myFont bg-transparent focus:outline-none focus:border-[#242424]   border-solid border rounded-sm text-[#242424] border-[#242424] caret-[#242424] placeholder-[#242424];
 }
