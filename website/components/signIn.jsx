@@ -40,7 +40,7 @@ export default function SignIn()
             <form className = "flex place-items-center flex-col gap-2" onSubmit={HandleSubmit}>
                 <input type="text" onChange = {(e) => setEmail(e.target.value)} placeholder="Email"/>
                 <input type="text" onChange = {(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button className = "bg-blue-400 text-white w-32 self-center">Sign in</button>
+                <button className = "bg-red-300 text-white w-32 self-center">Sign in</button>
                 {error && <div className = "text-red-400 ">{error}</div>}
                 
                 

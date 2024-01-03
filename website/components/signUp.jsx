@@ -30,7 +30,7 @@ export default function SignUp()
             {
                 const form = e.target;
                 form.reset();
-                router.push("../");
+                router.push("../signIn")
             }
             else
             {
@@ -47,8 +47,8 @@ export default function SignUp()
         </h1>
         <form onSubmit = {handleSubmit} className = "flex flex-col gap-2">
             <input onChange = { e => setName(e.target.value)}type="text" placeholder="Full name"/>
-            <input onChange = { e => setEmail(e.target.value)}type="text" placeholder="Enter email or username"/>
-            <input onChange = { e => setPassword(e.target.value)}type="text" placeholder="Enter email or username"/>
+            <input onChange = { e => setEmail(e.target.value)}type="text" placeholder="Email"/>
+            <input onChange = { e => setPassword(e.target.value)}type="text" placeholder="Password"/>
             <button className = "bg-blue-400 text-white">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }
             
