@@ -3,14 +3,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
 export default function SignIn()
 {
-    let [email, setEmail] = useState("");
-    let [password, setPassword] = useState("");
-    let [error, setError] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-    let router = useRouter();
+    const router = useRouter();
     
     const HandleSubmit = async (e) => 
     {

@@ -1,7 +1,7 @@
 
 import './globals.css'
 import { AuthProvider } from './providers'
-
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className= "w-screen h-screen">
+      <body className= "w-screen h-screen"> <nav className=" w-[200px] sm:w-[400px] h-[30px] sm:h-[50px] flex flex-row gap-6 justify-end absolute right-0 mr-8">
+        <Link href={"/wallet"} className = "link">Wallet</Link>
+        <Link href={"/transactions"} className = "link">Transactions</Link>
+        <Link href={"/insurance"} className = "link">Insurance</Link>
+    </nav>
         <AuthProvider>{children}</AuthProvider></body>
     </html>
   )
