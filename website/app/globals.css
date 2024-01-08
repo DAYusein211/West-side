@@ -7,8 +7,27 @@
 
 :root
 {
-    
+    cursor:none;
+    overflow: hidden;
     background-color: black;
+}
+.cursor
+{
+    position:absolute;
+    border: 1px white solid;
+    
+    width: 10px;
+    height: 10px;
+    mix-blend-mode: difference;
+    border-radius: 100%;
+}
+.scale
+{
+    transform: scale(2);
+    mix-blend-mode: difference;
+   
+    
+    transition: .3s;
 }
 .link
 {
@@ -20,11 +39,13 @@
     opacity: 50%;
     transition-duration: 0.3s;
 }
+
 .link:hover
 {
-
+    cursor:none;
     opacity: 1;
 }
+
 .myFont
 {
     font-family: 'Inika', serif;
