@@ -29,9 +29,3 @@
 ## 🛠️ Tools for documentation
   <img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" width = "40px"/> <img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" width = "40px"/>
   
-## ⚙ Installation
-```
-You can download our project by using the green "Code" button.
-
-Or by pasting the following code in your CMD:
-git clone https://github.com/DAYusein211/opium.git 
