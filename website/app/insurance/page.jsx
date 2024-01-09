@@ -1,4 +1,4 @@
-import Insurance from "@/components/insurance"
+import Insurance from '@/components/insurance'
 
 export default function InsurancePage()
 {

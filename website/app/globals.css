@@ -3,38 +3,44 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inika&family=Inria+Serif:wght@300&display=swap');
-
-
-:root
+::selection
 {
-    cursor:none;
+    background:none;
+    color:rgb(96, 53, 96);
+}
+:root
+{   
     overflow: hidden;
     background-color: black;
 }
+*
+{
+    cursor:none;
+    letter-spacing: 1.5px;
+}
+*:hover 
+{
+    cursor:none;
+}
 .cursor
 {
+
+    z-index: 1;
+    background-color: #603560;
+    pointer-events: none;
     position:absolute;
-    border: 1px white solid;
-    
     width: 10px;
+    mix-blend-mode: difference;
     height: 10px;
-    mix-blend-mode: difference;
     border-radius: 100%;
+    transition: width .1s, height .1s;
 }
-.scale
-{
-    transform: scale(2);
-    mix-blend-mode: difference;
-   
-    
-    transition: .3s;
-}
+
 .link
 {
     @apply self-center;
     font-weight: 100;
-    
-    font-size: 22px;
+    font-size: 16px;
     color: white;
     opacity: 50%;
     transition-duration: 0.3s;
@@ -42,8 +48,8 @@
 
 .link:hover
 {
-    cursor:none;
-    opacity: 1;
+    color:rgb(96, 53, 96);
+    opacity:1;
 }
 
 .myFont
@@ -52,10 +58,7 @@
 
     font-family: 'Inria Serif', serif;
 }
-.spacing
-{
-    letter-spacing: 3px;
-}
+
 input 
 {
     
