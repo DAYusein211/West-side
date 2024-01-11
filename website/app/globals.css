@@ -6,12 +6,12 @@
 ::selection
 {
     background:none;
-    color:rgb(96, 53, 96);
+    color:#FF0000;
 }
 :root
 {   
-    overflow: hidden;
-    background-color: black;
+    overflow-x: hidden;
+    background-color: #010B03;
 }
 *
 {
@@ -22,17 +22,22 @@
 {
     cursor:none;
 }
+button
+{
+    cursor:none;
+}
 .cursor
 {
 
-    z-index: 1;
-    background-color: #603560;
+    z-index: 10000;
+    background-color: #ff00003b;
     pointer-events: none;
     position:absolute;
     width: 10px;
-    mix-blend-mode: difference;
     height: 10px;
     border-radius: 100%;
+    border: 1px solid #FF0000;
+
     transition: width .1s, height .1s;
 }
 
@@ -40,15 +45,15 @@
 {
     @apply self-center;
     font-weight: 100;
-    font-size: 16px;
-    color: white;
+    font-size: 24px;
+    color: #ffffff;
     opacity: 50%;
     transition-duration: 0.3s;
 }
 
 .link:hover
 {
-    color:rgb(96, 53, 96);
+    color:#FF0000;
     opacity:1;
 }
 
@@ -58,9 +63,15 @@
 
     font-family: 'Inria Serif', serif;
 }
-
+.line
+{
+    width: 100px;
+    height: 1px;
+    background-color: white;
+    color:rgba(255, 255, 255, 0.103);
+}
 input 
 {
-    
-   @apply w-[150px]  py-1 px-2 myFont bg-transparent focus:outline-none focus:border-[#242424]   border-solid border rounded-sm text-[#242424] border-[#242424] caret-[#242424] placeholder-[#242424];
+    background-color: rgba(255, 255, 255, 0.027);
+   @apply w-[250px] h-[40px] py-1 px-2 myFont focus:outline-none  rounded-sm text-white  caret-[#243527] placeholder-[#243527];
 }

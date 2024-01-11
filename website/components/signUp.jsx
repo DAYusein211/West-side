@@ -8,7 +8,7 @@ export default function SignUp()
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("Invalid");
+    const [error, setError] = useState("");
     const router = useRouter();
     
     const handleSubmit = async (e) => 
@@ -30,7 +30,7 @@ export default function SignUp()
             {
                 const form = e.target;
                 form.reset();
-                router.push("../signIn")
+                router.push("/")
             }
             else
             {
