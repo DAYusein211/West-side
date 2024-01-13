@@ -48,10 +48,10 @@ export default function SignUp()
             Sign up
         </h1>
         <form onSubmit = {handleSubmit} className = "flex flex-col gap-2">
-            <input onChange = { e => setName(e.target.value)}type="text" placeholder="Full name"/>
-            <input onChange = { e => setEmail(e.target.value)}type="text" placeholder="Email"/>
-            <input onChange = { e => setPassword(e.target.value)}type="text" placeholder="Password"/>
-            <input onChange = { e => setIBAN(e.target.value)}type="text" placeholder="IBAN"/>
+            <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Full name"/>
+            <input onChange = { e => setEmail(e.target.value.trim())}type="text" placeholder="Email"/>
+            <input onChange = { e => setPassword(e.target.value.trim())}type="text" placeholder="Password"/>
+            <input onChange = { e => setIBAN(e.target.value.trim())}type="text" placeholder="IBAN"/>
             <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
             <button className = "bg-blue-400 text-white">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }

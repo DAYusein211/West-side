@@ -24,7 +24,7 @@ export default function SignIn()
 
            if(res.error)
            {
-               setError("Invalid password or username") 
+               setError("Invalid password or username");
                 return;
             }   
            router.replace("");

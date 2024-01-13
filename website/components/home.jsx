@@ -5,6 +5,8 @@ import gsap from 'gsap';
 import SignIn from './signIn';
 import { useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from "@react-three/drei";
 
 export default function Home()
 {
@@ -87,10 +89,11 @@ export default function Home()
       }
     )})
      
-  return () => ctx.revert()
+  return () => ctx.revert();
+
   }, []);
     return <div>
-              
+          
               <div className = " absolute pop-up blurred left-[-35vw] w-[35vw] h-[100vh] z-20 backdrop-blur-3xl"></div>
               <div className = "absolute left-[-35vw] pop-up w-fit h-fit z-40">
                 <SignIn/>
@@ -105,7 +108,7 @@ export default function Home()
             </div>
             <div className='text-white relative top-[20vh] w-[100vw] h-[100px] flex items-center flex-col'>
                 <div className = 'relative w-[50%] text-center text-3xl'>Looking for somewhere to store your crypto? You might’ve found the right place</div>
-               {!(status == "authenticated") && (<button className = 'btn relative top-[50px] pr-10 pl-10 pt-2 pb-2 text-[#99D036] text-[20px] border-[1px] border-[#99D036] hover:border-[#FF0000] hover:text-[#FF0000] duration-200'>Sign In</button>)} 
+               {!(status == "authenticated") && (<button className = 'btn z-[2] relative top-[50px] pr-10 pl-10 pt-2 pb-2 text-[#99D036] text-[20px] border-[1px] border-[#99D036] hover:border-[#FF0000] hover:text-[#FF0000] duration-200'>Sign In</button>)} 
             </div>
             <div className="text1 text-white w-[300px]">Cudun estra kill enjoy whateever text yeah right on the track of it yeah </div>
             <div className="rec mt-[300px] bg-blue-400 w-[100vw] h-[100vh]"><div className=" box bg-slate-500 w-[100px] h-[100px] z-10"></div></div>

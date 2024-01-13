@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.93.0",
+    "@react-three/fiber": "^8.15.14",
+    "@types/three": "^0.160.0",
     "bcryptjs": "^2.4.3",
+    "framer-motion": "^10.18.0",
+    "framer-motion-3d": "^10.18.0",
     "gsap": "^3.12.4",
     "mongoose": "^8.0.3",
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
