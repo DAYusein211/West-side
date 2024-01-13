@@ -1,16 +1,30 @@
 'use client'
 import './globals.css'
 import { AuthProvider } from './providers'
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 
 export default function RootLayout({ children }) 
 {
-  useEffect(() => 
+  useLayoutEffect(() => 
   {
+    
+    
     const cursor = document.querySelector('.cursor');
-    window.addEventListener('mousemove', (e) =>{ gsap.set(cursor, {x:e.clientX - 5, y:e.clientY - 10}) });
-
+    const updateCursor = (e) =>
+    { 
+      gsap.set(cursor, 
+      {
+        
+        x:(e.clientX + window.scrollX) - 5, 
+        y:(e.clientY + window.scrollY) - 10
+      }) 
+      
+    };
+    
+    window.addEventListener('mousemove',  updateCursor);
+    
+  
     const cursorEffect = document.querySelectorAll('.effect');
     cursorEffect.forEach(cursorEffect => 
       {
@@ -33,7 +47,7 @@ export default function RootLayout({ children })
     
   return (
     <html>
-      <body className= 'w-screen h-screen'>
+      <body className='h-fit'>
       <div className='cursor'></div>
          
 

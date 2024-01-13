@@ -37,7 +37,7 @@ export default function SignIn()
     }
     return (
         
-    <div className="absolute flex justify-center w-[35vw] h-[100vh] z-10" >
+    <div className= "absolute flex justify-center w-[35vw] z-10" >
         
         <div className="relative mt-[200px] flex items-center flex-col w-fit h-fit">
             <h1 className = "myFont spacing text-white text-3xl align-middle font-serif tracking-wider font-thin">

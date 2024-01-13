@@ -8,8 +8,20 @@
     background:none;
     color:#FF0000;
 }
+.rec1
+{
+    background-color: #FF0000;
+    width: 100vw;
+    height:100vh;
+}
+.pin-spacer
+{
+    width:0 !important;
+    height:0 !important;
+}
 :root
-{   
+{
+    scroll-behavior: smooth;   
     overflow-x: hidden;
     background-color: #010B03;
 }
@@ -46,15 +58,15 @@ button
     @apply self-center;
     font-weight: 100;
     font-size: 24px;
-    color: #ffffff;
-    opacity: 50%;
+    color: rgba(255, 255, 255, 0.432);
+    
     transition-duration: 0.3s;
 }
 
 .link:hover
 {
     color:#FF0000;
-    opacity:1;
+    
 }
 
 .myFont
