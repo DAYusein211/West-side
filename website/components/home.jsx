@@ -108,7 +108,7 @@ export default function Home()
                {!(status == "authenticated") && (<button className = 'btn relative top-[50px] pr-10 pl-10 pt-2 pb-2 text-[#99D036] text-[20px] border-[1px] border-[#99D036] hover:border-[#FF0000] hover:text-[#FF0000] duration-200'>Sign In</button>)} 
             </div>
             <div className="text1 text-white w-[300px]">Cudun estra kill enjoy whateever text yeah right on the track of it yeah </div>
-            <div className="rec bg-blue-400 w-[100vw] h-[100vh]"><div className=" box bg-slate-500 w-[100px] h-[100px] z-10"></div></div>
+            <div className="rec mt-[300px] bg-blue-400 w-[100vw] h-[100vh]"><div className=" box bg-slate-500 w-[100px] h-[100px] z-10"></div></div>
             
             <div className="relative mt-[600px] bg-slate-100 w-[100px] h-[1000px]"></div>
             

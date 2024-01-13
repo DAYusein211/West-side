@@ -15,6 +15,16 @@ const userShcema = new Schema({
     {
     type:String, 
     required: true,
+    },
+    IBAN:
+    {
+        type:String,
+        required: true,
+    },
+    balance:
+    {
+        type:Number,
+        required: true,
     }
 }, {timestamps: true}
 );

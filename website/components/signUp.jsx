@@ -8,6 +8,8 @@ export default function SignUp()
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [IBAN, setIBAN] = useState("");
+    const [balance, setBalance] = useState("");
     const [error, setError] = useState("");
     const router = useRouter();
     
@@ -25,7 +27,7 @@ export default function SignUp()
             {
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({name, email, password})});
+            body: JSON.stringify({name, email, password, IBAN, balance})});
             if(res.ok)
             {
                 const form = e.target;
@@ -49,6 +51,8 @@ export default function SignUp()
             <input onChange = { e => setName(e.target.value)}type="text" placeholder="Full name"/>
             <input onChange = { e => setEmail(e.target.value)}type="text" placeholder="Email"/>
             <input onChange = { e => setPassword(e.target.value)}type="text" placeholder="Password"/>
+            <input onChange = { e => setIBAN(e.target.value)}type="text" placeholder="IBAN"/>
+            <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
             <button className = "bg-blue-400 text-white">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }
             
