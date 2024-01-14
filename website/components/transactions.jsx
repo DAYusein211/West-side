@@ -1,60 +1,63 @@
-'use client'
-import { useEffect } from "react";
+"use client";
+import Link from "next/link";
+import {useState} from "react"
+import { useRouter } from "next/navigation";
 
-export default function Transactions() {
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const res = await fetch('api/accounts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    balance:524
-                }),
-            });
-
-            if (!res.ok) {
-                console.error('Error updating user:', res.statusText);
-                // Handle error, show message, etc.
+export default function SignUp()
+{
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [IBAN, setIBAN] = useState("");
+    const [balance, setBalance] = useState("");
+    const [error, setError] = useState("");
+    const router = useRouter();
+    
+    const handleSubmit = async (e) => 
+    {
+        e.preventDefault();
+        if(!name || !email || !password)
+        {
+            setError("Not all data has been given.")
+        return;
+        }
+        try 
+        {
+            const res = await fetch("api/accounts", 
+            {
+            method: "POST", 
+            headers: {"Content-Type": "application/json"}, 
+            body: JSON.stringify({name, email, password, IBAN, balance})});
+            if(res.ok)
+            {
+                const form = e.target;
+                form.reset();
+                router.push("/")
+            }
+            else
+            {
+                console.log("Sign up failure.")
             }
         } catch (error) {
-            console.error('Error during fetch:', error);
+            console.log("Error during registration:", error)
         }
-    };
-
-    fetchData();
-}, []);
-
-  // The rest of your component remains unchanged
-
-  return (
-    <div className='text-white'>
-      <h1>Money Transaction Simulator</h1>
-      <div>
-        <h2>Accounts:</h2>
-      </div>
-
-      <form className='relative top-[100px]'>
-        <div>
-          <label>Receiver:</label>
-          <input
-            type="text"
-          />
-        </div>
-        <div>
-          <label>Amount:</label>
-          <input
-            type="text"
-          />
-        </div>
-        <button type="submit">Transfer</button>
-      </form>
-
-      {/* The rest of your component remains unchanged */}
+    }
+    return <div className="grid place-items-center h-screen">
+    <div className = "shadow-md p-3 rounded-r-sm ">
+        <h1 className = "text-xl">
+            Sign up
+        </h1>
+        <form onSubmit = {handleSubmit} className = "flex flex-col gap-2">
+            <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Full name"/>
+            <input onChange = { e => setEmail(e.target.value.trim())}type="text" placeholder="Email"/>
+            <input onChange = { e => setPassword(e.target.value.trim())}type="text" placeholder="Password"/>
+            <input onChange = { e => setIBAN(e.target.value.trim())}type="text" placeholder="IBAN"/>
+            <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
+            <button className = "bg-blue-400 text-white">Sign up</button>
+            {error &&(<div className = "text-red-400">{error}</div>) }
+            
+            <Link href = {"../"} className = "underline"> Sign In</Link>
+        </form>
     </div>
-  );
+</div>
 }
