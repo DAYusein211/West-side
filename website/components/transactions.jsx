@@ -5,18 +5,15 @@ import { useRouter } from "next/navigation";
 
 export default function SignUp()
 {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [IBAN, setIBAN] = useState("");
-    const [balance, setBalance] = useState("");
+    const [reciever, setReciever] = useState("");
+    const [amount, setAmount] = useState("");
     const [error, setError] = useState("");
     const router = useRouter();
     
     const handleSubmit = async (e) => 
     {
         e.preventDefault();
-        if(!name || !email || !password)
+        if(!reciever || !amount)
         {
             setError("Not all data has been given.")
         return;
@@ -27,7 +24,7 @@ export default function SignUp()
             {
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({name, email, password, IBAN, balance})});
+            body: JSON.stringify({reciever, amount})});
             if(res.ok)
             {
                 const form = e.target;
@@ -48,11 +45,8 @@ export default function SignUp()
             Sign up
         </h1>
         <form onSubmit = {handleSubmit} className = "flex flex-col gap-2">
-            <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Full name"/>
-            <input onChange = { e => setEmail(e.target.value.trim())}type="text" placeholder="Email"/>
-            <input onChange = { e => setPassword(e.target.value.trim())}type="text" placeholder="Password"/>
-            <input onChange = { e => setIBAN(e.target.value.trim())}type="text" placeholder="IBAN"/>
-            <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
+            <input onChange = { e => setReciever(e.target.value.trim())}type="text" placeholder="Reciever"/>
+            <input onChange = { e => setAmount(e.target.value.trim())}type="text" placeholder="Amount"/>
             <button className = "bg-blue-400 text-white">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }
             

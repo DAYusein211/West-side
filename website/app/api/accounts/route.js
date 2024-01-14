@@ -7,14 +7,14 @@ export async function POST(req)
 {
     try
     {
-        const {balance} = await req.json();
+        const {reciever,amount} = await req.json();
         await connectMongoDB();
       
-        await User.updateOne({name:'Denis'},
+        await User.updateOne({name: reciever},
         {
             $set:
             {
-                balance:9854
+                balance:amount
             }
         })
         //WORKS OH MY GOD IT WORKS
