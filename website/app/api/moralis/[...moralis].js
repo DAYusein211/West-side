@@ -1,0 +1,3 @@
+import { MoralisNextApi } from "@moralisweb3/next";
+
+export default MoralisNextApi({ apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImNlMjJhN2Q2LTZkNTItNDZmYy1iMzUwLWMwMWI4NWZkNjI1NiIsIm9yZ0lkIjoiMzcyMTE4IiwidXNlcklkIjoiMzgyNDMwIiwidHlwZUlkIjoiMGYxZjdlNjAtOWE2ZC00NGYyLThjMjktNjIyYjgxNDE2ZjcyIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MDUxODQ0MjAsImV4cCI6NDg2MDk0NDQyMH0.uIGu5NlJWLeYEoJ5zXJamLb16j724lQX7OOtiD8kNCU' });

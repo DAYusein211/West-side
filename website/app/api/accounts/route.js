@@ -1,20 +1,14 @@
-import {NextResponse} from 'next/server';
 import { connectMongoDB } from '@/lib/mongodb';
-import User from '@/models/user'
+import User from '@/models/user';
+import { NextResponse } from 'next/server';
 
-export const GET = async (req) =>
-{
-    try
-    {
+export default async function POST(req) {
+    try {
         await connectMongoDB();
-        const users = await User.find();
         
-        return new NextResponse(JSON.stringify(users), {status:200});
+        return "sd";
 
-    }
-    catch(error)
-    {   
-        return new NextResponse("Error in fetching " + error, {status:500})
+    } catch (err) {
+        return NextResponse.json({ message: 'Error Occurred, try again' }, { status: 500 });
     }
 }
-

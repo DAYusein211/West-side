@@ -3,7 +3,7 @@ import './globals.css'
 import { AuthProvider } from './providers'
 import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
-
+import Link from 'next/link';
 export default function RootLayout({ children }) 
 {
   useLayoutEffect(() => 
@@ -49,7 +49,13 @@ export default function RootLayout({ children })
     <html>
       <body className='h-fit'>
       <div className='cursor'></div>
-         
+      <div className=' w-screen flex justify-center h-[60px] absolute top-10 z-10 '>
+                <nav className=' effect w-[fit-content] h-[30px] flex  gap-8 pr-2 pl-2'>
+                    <Link href={'/wallet'}  className = 'link'>Wallet</Link>
+                    <Link href={'/transactions'} className = 'link'>Transactions</Link>
+                    <Link href={'/insurance'} className = 'link' >Insurance</Link>
+                </nav>
+            </div>
 
       <AuthProvider>{children}</AuthProvider></body>
     </html>

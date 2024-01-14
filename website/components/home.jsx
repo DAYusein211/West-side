@@ -5,8 +5,7 @@ import gsap from 'gsap';
 import SignIn from './signIn';
 import { useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from "@react-three/drei";
+
 
 export default function Home()
 {
@@ -99,13 +98,7 @@ export default function Home()
                 <SignIn/>
               </div>
               <div className = "opacity-0 darken absolute blurred w-[100vw] h-[100vh] backdrop-blur-[5px] z-0"></div>
-              <div className=' w-screen flex justify-center h-[60px] relative top-10  '>
-                <nav className=' effect w-[fit-content] h-[30px] flex  gap-8 pr-2 pl-2'>
-                    <Link href={'/wallet'}  className = 'link'>Wallet</Link>
-                    <Link href={'/transactions'} className = 'link'>Transactions</Link>
-                    <Link href={'/insurance'} className = 'link' >Insurance</Link>
-                </nav>
-            </div>
+              
             <div className='text-white relative top-[20vh] w-[100vw] h-[100px] flex items-center flex-col'>
                 <div className = 'relative w-[50%] text-center text-3xl'>Looking for somewhere to store your crypto? You might’ve found the right place</div>
                {!(status == "authenticated") && (<button className = 'btn z-[2] relative top-[50px] pr-10 pl-10 pt-2 pb-2 text-[#99D036] text-[20px] border-[1px] border-[#99D036] hover:border-[#FF0000] hover:text-[#FF0000] duration-200'>Sign In</button>)} 
