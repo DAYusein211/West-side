@@ -31,6 +31,8 @@ Server based website, where you can make transactions between users
 ## 🛠️ Tools for documentation
   <img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" width = "40px"/> <img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" width = "40px"/>
 
+## Partners 
+<img src="/Documents/Logo.png" width = "40px"/>
 ## Installation
 ```
 1.Step - clone the repo

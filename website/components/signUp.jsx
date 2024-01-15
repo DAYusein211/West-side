@@ -56,7 +56,6 @@ export default function SignUp()
             <button className = "w-[100px] bg-[rgb(1,1,1,0)]  text-[#243527] hover:text-[#99D036] duration-100">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }
             
-            <Link href = {"../"} className = "underline"> Sign In</Link>
         </form>
     </div>
 </div>
