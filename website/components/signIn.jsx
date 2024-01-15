@@ -40,22 +40,19 @@ export default function SignIn()
     <div className= "absolute flex justify-center w-[35vw] z-10" >
         
         <div className="relative mt-[200px] flex items-center flex-col w-fit h-fit">
-            <h1 className = "myFont spacing text-white text-3xl align-middle font-serif tracking-wider font-thin">
+            <h1 className = "myFont spacing text-[#758878] text-3xl align-middle font-serif tracking-wider font-thin">
                 Sign in 
             </h1>
             <form className = " relative top-[40px] flex items-center justify-center flex-col gap-3" onSubmit={HandleSubmit}>
-                <input type="text" onChange = {(e) => setEmail(e.target.value)} placeholder="Email"/>
-                <input type="text" onChange = {(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button className = "bg-[#243527] text-[#758878] pr-6 pl-6 pt-1 pb-1 self-center hover:bg-[#758878] hover:text-white duration-200">Sign in</button>
+                <input type="email" onChange = {(e) => setEmail(e.target.value)} placeholder="Email"/>
+                <input type="password" onChange = {(e) => setPassword(e.target.value)} placeholder="Password"/>
+                <button className = "  text-[#758878] pr-6 pl-6 pt-1 pb-1 self-center hover:text-[#99D036] duration-200">Sign in</button>
                 {error && <div className = "text-[red]">{error}</div>}
                 <div className= "w-[100%] flex flex-row items-center justify-center gap-3">
-                    <div className = "line"></div> <div className = "text-white">or</div> <div className = "line"></div>
+                    <div className = "line"></div> <div className = "text-[#758878]">or</div> <div className = "line"></div>
                 </div>
-                <div className= "w-[150px] bg-white h-[40px]">
-                    <div>Sign in with</div>
-                </div>
-
-            <Link href = {"signUp"} className = "underline text-white"> Sign Up</Link>
+            
+            <Link href = {"signUp"} className = " text-[#758878] hover:text-[#99D036] duration-200"> Sign Up</Link>
             </form>
         </div>
     </div>

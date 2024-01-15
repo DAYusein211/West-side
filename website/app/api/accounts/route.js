@@ -1,28 +1,19 @@
+
 import { connectMongoDB } from '@/lib/mongodb';
 import User from '@/models/user';
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs'
-
-export async function POST(req)
+export const GET =  async () =>
 {
     try
     {
-        const {reciever,amount} = await req.json();
         await connectMongoDB();
-      
-        await User.updateOne({name: reciever},
-        {
-            $set:
-            {
-                balance:amount
-            }
-        })
-        //WORKS OH MY GOD IT WORKS
-        return NextResponse.json({message: 'User Registered'}, {status: 201});
+        const users = await User.find();
         
+        return new NextResponse(JSON.stringify(users), {status:200});
+
     }
-    catch(err)
-    {
-        return NextResponse.json({message: 'Error Accured, try again'}, {status: 500})
+    catch(error)
+    {   
+        return new NextResponse("Error in fetching " + error, {status:500})
     }
 }

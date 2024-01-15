@@ -21,7 +21,7 @@
 }
 :root
 {
-    scroll-behavior: smooth;   
+
     overflow-x: hidden;
     background-color: #010B03;
 }
@@ -79,11 +79,14 @@ button
 {
     width: 100px;
     height: 1px;
-    background-color: white;
+    background-color: #758878;
     color:rgba(255, 255, 255, 0.103);
 }
 input 
 {
-    background-color: rgba(255, 255, 255, 0.027);
-   @apply w-[250px] h-[40px] py-1 px-2 myFont focus:outline-none  rounded-sm text-white  caret-[#243527] placeholder-[#243527];
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    border-bottom:1px solid #243527;
+    
+   @apply w-[250px] h-[40px] py-1 px-2 myFont focus:outline-none  rounded-sm text-[#243527]  caret-[#243527] placeholder-[#243527];
 }

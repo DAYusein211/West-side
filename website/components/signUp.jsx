@@ -16,7 +16,7 @@ export default function SignUp()
     const handleSubmit = async (e) => 
     {
         e.preventDefault();
-        if(!name || !email || !password)
+        if(!name || !email || !password || !IBAN || !balance)
         {
             setError("Not all data has been given.")
         return;
@@ -47,13 +47,13 @@ export default function SignUp()
         <h1 className = "text-xl">
             Sign up
         </h1>
-        <form onSubmit = {handleSubmit} className = "flex flex-col gap-2">
-            <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Full name"/>
-            <input onChange = { e => setEmail(e.target.value.trim())}type="text" placeholder="Email"/>
-            <input onChange = { e => setPassword(e.target.value.trim())}type="text" placeholder="Password"/>
+        <form onSubmit = {handleSubmit} className = " pr-[20px] pl-[20px] pt-[50px] pb-[40px] border-[1px] border-[#9ad0367f] flex flex-col gap-2">
+            <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Name"/>
+            <input onChange = { e => setEmail(e.target.value.trim())}type="email" placeholder="Email"/>
+            <input onChange = { e => setPassword(e.target.value.trim())}type="password" placeholder="Password"/>
             <input onChange = { e => setIBAN(e.target.value.trim())}type="text" placeholder="IBAN"/>
             <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
-            <button className = "bg-blue-400 text-white">Sign up</button>
+            <button className = "w-[100px] bg-[rgb(1,1,1,0)]  text-[#243527] hover:text-[#99D036] duration-100">Sign up</button>
             {error &&(<div className = "text-red-400">{error}</div>) }
             
             <Link href = {"../"} className = "underline"> Sign In</Link>
