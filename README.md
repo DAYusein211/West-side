@@ -42,7 +42,7 @@ https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi
 3. Step - go into the 'website' folder and download 'next' by making a new terminal and typing in:
 npm install next
 
-4. Step npm run dev
+4. Step npm run dev !! make sure the local is http://localhost:3000 !!
 Enjoy!
 
-  
+
