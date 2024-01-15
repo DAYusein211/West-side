@@ -37,14 +37,11 @@ Server based website, where you can make transactions between users
 ```
 1.Step - clone the repo
 git clone https://github.com/DAYusein211/opium.git
-
 2.Step - make sure you have node.j installed in your device, if you don't
 https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi
-
 3. Step - go into the 'website' folder and download 'next' by making a new terminal and typing in:
 npm install next
-
-4. Step npm run dev !! make sure the local is http://localhost:3000 !!
+4. Step npm run dev
 Enjoy!
 
-
+  
