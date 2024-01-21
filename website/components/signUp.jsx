@@ -47,7 +47,7 @@ export default function SignUp()
         <div>
         <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
         <div className="absolute w-[100vw] h-[500px]">
-            <Image src={pagesWave} width = "100%" height= "100%"/> 
+            <Image src={pagesWave} layout="responsive" width = {0} height= {0}/> 
         </div>
     <div className= "absolute flex w-screen h-screen items-center justify-center">
         <div className=" text-white relative flex items-center flex-col rounded-[5px]  px-[15vw] py-[75px]  [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)]" >

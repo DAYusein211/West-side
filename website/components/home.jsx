@@ -235,10 +235,10 @@ export default function Home()
     return <div>
           <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
           <div className="absolute top-[-5vw] w-[100vw] h-[500px]">
-          <div className="absolute flex justify-center items-end w-[100vw] h-[calc(100vw/4)]">
-          <div className="randomised absolute text-[100px] text-white">Security</div>
-          </div>
-          <Image src={homeWave} width={"100%"} height={"100%"} />  
+            <div className="absolute flex justify-center items-end w-[100vw] h-[calc(100vw/4)]">
+              <div className="randomised absolute text-[100px] text-white">Security</div>
+            </div>
+            <Image src={homeWave} layout="responsive" width = {0} height= {0} />  
           
           </div>
           <Link href={"/signIn"} className="absolute right-[30px] top-[10px] text-[10px] text-white font-bold bg-[#0029FF] hover:bg-[#5200FF] p-2 borde-[5px] rounded-[5px]">SIGN IN</Link>
