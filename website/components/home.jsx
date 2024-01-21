@@ -6,6 +6,9 @@ import React,{ useEffect, useRef} from "react";
 import * as THREE from 'three'
 import { ScrollTrigger } from "gsap/all";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
+import homeWave from '@/assets/homeWave.svg'
+import Link from "next/link";
 let count = 0;
 const ThreeScene = React.memo(() =>
   {
@@ -97,7 +100,7 @@ export default function Home()
 {
 
   
-  useEffect(() => 
+  /*useEffect(() => 
   {
     
   gsap.registerPlugin(ScrollTrigger)
@@ -211,35 +214,39 @@ export default function Home()
   })
     
   return () => ctx.revert();
-
+  // <buttononClick={() => signOut({callbackUrl: "http://localhost:3000/"})}>Sign out</button>
+  //{(status == 'authenticated') && (<div className="text-white absolute right-[20px] top-[20px]">Signed in!</div>)}
   }, []);
-
+*/
+  const handleSize = _ =>
+  {
+       const size =  {
+        width: window.innerWidth,
+        height: window.innerHeight - 400
+       }
+       window.addEventListener('resize', (e)=>
+       {
+           size.width = e.innerWidth;
+           size.height = e.innerHeight - 400;
+       })
+       return size;
+  }
   const { data: session, status } = useSession();
     return <div>
-            {(status == 'authenticated') && (<div className="text-white absolute right-[20px] top-[20px]">Signed in!</div>)}
-            <div className="absolute right-[20px] text-right">
-            </div>
-            <div className = "body">
-              <div className="absolute "><ThreeScene/></div>
-              
-              <div className = " absolute pop-up blurred left-[-35vw] w-[35vw] h-[100vh] z-20 backdrop-blur-3xl"></div>
-              <div className = "absolute left-[-35vw] pop-up w-fit h-fit z-40">
-                <SignIn/>
-              </div>
-              <div className = "opacity-0 darken absolute blurred w-[100vw] h-[100vh] backdrop-blur-[5px] z-0"></div>
-              
-            <div className='text-white relative top-[30vh] w-[100vw] h-[100px] flex items-center flex-col'>
-                <div className = 'relative w-[50%] text-center text-3xl'>Discover a world of secure transactions and effortless control. Elevate your financial experience – join us now!</div>
-                <div className="flex gap-4">
-                <button className = 'btn z-[2] relative top-[50px] pr-10 pl-10 pt-2 pb-2 text-[#99D036] text-[20px] border-[1px] border-[#99D036] hover:border-[#FF0000] hover:text-[#FF0000] duration-200'>Sign In</button>
-                <button className = 'btn z-[2] relative top-[50px] pr-8 pl-8 pt-2 pb-2 hover:text-[#99D036] text-[20px] border-[1px] hover:border-[#99D036] border-[#FF0000] text-[#FF0000] duration-200' onClick={() => signOut({callbackUrl: "http://localhost:3000/"})}>Sign out</button>
-                </div>
-            </div>
-            
-            <div className=" mt-[700px] w-[100vw] h-[100vh]"><div className="opacity-0 box text-white text-2xl w-[600px] h-[100px] z-10">Enjoy secure financial transactions with our advanced platform. Our encryption ensures privacy, offering a seamless experience for payments, transfers, and account management. </div><div className="opacity-0 box2 absolute right-[0] text-right text-white text-2xl w-[700px] h-[100px] z-10">Stay in control with real-time updates on spending and deposits. Our user-friendly design simplifies financial tracking for informed and stress-free decision-making. </div></div>
-            
-            </div>
-           
+          <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
+          <div className="absolute top-[-5vw] w-[100vw] h-[500px]">
+          <div className="absolute flex justify-center items-end w-[100vw] h-[calc(100vw/4)]">
+          <div className="randomised absolute text-[100px] text-white">Security</div>
+          </div>
+          <Image src={homeWave} width={"100%"} height={"100%"} />  
+          
+          </div>
+          <Link href={"/signIn"} className="absolute right-[30px] top-[10px] text-[10px] text-white font-bold bg-[#0029FF] hover:bg-[#5200FF] p-2 borde-[5px] rounded-[5px]">SIGN IN</Link>
+          <div className="absolute text-[#001730] bottom-[0px] w-screen h-[100px] flex items-center flex-col">
+            <div className = "font-bold text-3xl">Sufficient payment and requests!</div>
+            <div>less than 24 hours transactions. Lorem ipsum ala ba</div>
+          </div>
         </div>
+          
 
 }

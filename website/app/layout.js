@@ -46,11 +46,8 @@ export default function RootLayout({ children })
 
   
 
-    
-  return (
-    <html>
-      <body className='h-fit'>
-      <div className='cursor'></div>
+    /*
+      
       <div className=' w-screen flex justify-center h-[60px] absolute top-10 z-10 '>
                 <nav className=' effect w-[fit-content] h-[30px] flex  gap-8 pr-2 pl-2'>
                    <Link href={'/'}  className = 'link'>Home</Link>
@@ -60,7 +57,14 @@ export default function RootLayout({ children })
                 
             </div>
 
-      <AuthProvider>{children}</AuthProvider></body>
+      
+      */
+  return (
+    <html>
+      <body className='h-screen overflow-hidden'>
+      <div className='cursor'></div>
+      <AuthProvider>{children}</AuthProvider>
+        </body>
     </html>
   )
 }
