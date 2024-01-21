@@ -39,7 +39,7 @@ export default function SignIn()
     return (
     <div>
         <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
-        <div className="absolute w-[100vw]">
+        <div className="absolute w-[100vw] h-[500px]">
             <Image src={pagesWave} width = "100%" height= "100%"/> 
         </div>
     <div className= "absolute flex w-screen h-screen items-center justify-center" >
