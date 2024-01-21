@@ -3,7 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
+import pagesWave from '@/assets/pagesWave.svg';
 export default function SignIn()
 {
     
@@ -36,25 +37,31 @@ export default function SignIn()
             }
     }
     return (
+    <div>
+        <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
+        <div className="absolute w-[100vw]">
+        <Image src={pagesWave} width = "100%" height= "100%"/> 
+        </div>
+    <div className= "absolute flex w-screen h-screen items-center justify-center" >
         
-    <div className= "absolute flex justify-center w-[35vw] z-10" >
-        
-        <div className="relative mt-[200px] flex items-center flex-col w-fit h-fit">
-            <h1 className = "myFont spacing text-[#758878] text-3xl align-middle font-serif tracking-wider font-thin">
+        <div className=" text-white relative flex items-center flex-col rounded-[5px] pr-[10vw] pl-[10vw] pt-[125px] pb-[125px] [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)]">
+            <h1 className = "absolute top-[10px] left-[10px]">
                 Sign in 
             </h1>
-            <form className = " relative top-[40px] flex items-center justify-center flex-col gap-3" onSubmit={HandleSubmit}>
+            <form className = "flex flex-col items-center w-[100%] gap-3" onSubmit={HandleSubmit}>
                 <input type="email" onChange = {(e) => setEmail(e.target.value)} placeholder="Email"/>
                 <input type="password" onChange = {(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button className = "  text-[#758878] pr-6 pl-6 pt-1 pb-1 self-center hover:text-[#99D036] duration-200">Sign in</button>
+                <button className = "bg-[#0029FF]  w-[100%] rounded-[5px] p-1">Sign in</button>
                 {error && <div className = "text-[red]">{error}</div>}
-                <div className= "w-[100%] flex flex-row items-center justify-center gap-3">
-                    <div className = "line"></div> <div className = "text-[#758878]">or</div> <div className = "line"></div>
+                <div className="text-[10px] flex flex-row"> <div className="opacity-50">Don't have an account?</div> <Link href = {"signUp"} className = "font-bold">Sign up</Link></div>
+                <div className= "flex flex-row items-center gap-1">
+                    <div className = "line"></div> <div className = "opacity-25 text-[10px]">or</div> <div className = "line"></div>
                 </div>
             
-            <Link href = {"signUp"} className = " text-[#758878] hover:text-[#99D036] duration-200"> Sign Up</Link>
+            
             </form>
         </div>
+    </div>
     </div>
         );
 }
