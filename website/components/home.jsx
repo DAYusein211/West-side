@@ -1,11 +1,7 @@
 'use client'
 import { useSession } from "next-auth/react"
-import gsap from 'gsap';
-import SignIn from './signIn';
 import React,{ useEffect, useRef} from "react";
 import * as THREE from 'three'
-import { ScrollTrigger } from "gsap/all";
-import { signOut } from "next-auth/react";
 import Image from "next/image";
 import homeWave from '@/assets/homeWave.svg'
 import Link from "next/link";
@@ -218,19 +214,7 @@ export default function Home()
   //{(status == 'authenticated') && (<div className="text-white absolute right-[20px] top-[20px]">Signed in!</div>)}
   }, []);
 */
-  const handleSize = _ =>
-  {
-       const size =  {
-        width: window.innerWidth,
-        height: window.innerHeight - 400
-       }
-       window.addEventListener('resize', (e)=>
-       {
-           size.width = e.innerWidth;
-           size.height = e.innerHeight - 400;
-       })
-       return size;
-  }
+
   const { data: session, status } = useSession();
     return <div>
           <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>

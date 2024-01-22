@@ -6,7 +6,7 @@
 ::selection
 {
     background:none;
-    color:#fff200;
+    color:#ff6a00;
 }
 .rec1
 {
@@ -20,18 +20,7 @@
     height:0 !important;
 }
 
-*
-{
-    @apply cursor-none select-none;
-}
-*:hover 
-{
-    cursor:none;
-}
-button
-{
-    cursor:none;
-}
+
 .cursor
 {
 
