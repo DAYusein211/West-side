@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req)
 {
-    try
+    try 
     {
         const {reciever,amount} = await req.json();
         await connectMongoDB();

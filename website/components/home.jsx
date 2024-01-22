@@ -1,7 +1,11 @@
 'use client'
 import { useSession } from "next-auth/react"
+import gsap from 'gsap';
+import SignIn from './signIn';
 import React,{ useEffect, useRef} from "react";
 import * as THREE from 'three'
+import { ScrollTrigger } from "gsap/all";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import homeWave from '@/assets/homeWave.svg'
 import Link from "next/link";
