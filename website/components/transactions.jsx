@@ -9,7 +9,7 @@ export default function SignUp()
     const [error, setError] = useState("");
     const router = useRouter();
     const { data: session, status } = useSession();
-            const sender = session?.user?.name;
+    const sender = session?.user?.name;
     const handleAccountBalance = async () =>
     {
         const data = await fetch("api/accounts", 
@@ -22,7 +22,7 @@ export default function SignUp()
             console.error('Error updating user:', data.statusText);
         const decoded = await data.json();
         let senderBalance = 0;
-        decoded.map(d=>
+        decoded.map(d =>
             {
                 if(d.name === sender)
                 {

@@ -28,7 +28,7 @@ export default function SignIn()
                setError("Invalid password or username");
                 return;
             }   
-           router.replace("");
+           router.replace("/");
         }
         
             catch (error) 
