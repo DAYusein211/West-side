@@ -50,10 +50,10 @@ export default function SignUp()
             <Image src={pagesWave} layout="responsive" width = {0} height= {0}/> 
         </div>
     <div className= "absolute flex w-screen h-screen items-center justify-center">
-        <div className="py-[40px] px-[40px] flex items-center flex-col rounded-[5px] w-[35vw] h-[550px] bg-white shadow-lg" >
+        <div className="py-[40px] px-[2vw] flex items-center flex-col rounded-[5px] w-[35vw] h-[550px] bg-white shadow-lg" >
             
             <form onSubmit = {handleSubmit} className = "flex flex-col items-center w-[90%] gap-3">
-            <h1 className =" self-start font-bold">
+            <h1 className =" self-start font-bold text-[#3C3C3C]">
                 Create an account
             </h1>
                 <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Full name</label>
@@ -66,7 +66,7 @@ export default function SignUp()
                 <input onChange = { e => setIBAN(e.target.value.trim())}type="text"/>
                 <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Balance</label>
                 <input onChange = { e => setBalance(e.target.value)}type="text"/>
-                <button className = "bg-[#0029FF]  w-[100%] rounded-[5px] p-2 text-white mt-[10px]">Sign up</button>
+                <button className = "bg-[#0066FF] hover:bg-[#2A7DFA] duration-200 w-[100%] rounded-[5px] p-2 text-[10px] md:text-[16px] text-white mt-[10px]">Sign up</button>
                 {error &&(<div className = "text-[red]">{error}</div>) }
                 
             </form>

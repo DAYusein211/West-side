@@ -225,10 +225,11 @@ export default function Home()
             <Image src={homeWave} layout="responsive" width = {0} height= {0} />  
           
           </div>
-          {!session && (<Link href={"/signIn"} className="absolute right-[30px] top-[10px] text-[10px] text-white font-bold bg-[#0029FF] hover:bg-[#5200FF] p-2 borde-[5px] rounded-[5px]">SIGN IN</Link>)}
+          {!session && (<Link href={"/signIn"} className="absolute right-[30px] top-[25px] md:text-[16px] text-[10px] text-white font-semibold bg-[#0066FF] hover:bg-[#2A7DFA] duration-200 px-4 py-2 borde-[5px] rounded-[5px]">Sign in</Link>)}
           <div className="absolute text-[#001730] bottom-[0px] w-screen h-[100px] flex items-center flex-col">
             <div className = "font-bold text-3xl">Sufficient payment and requests!</div>
-            <div>less than 24 hours transactions. Lorem ipsum ala ba</div>
+            <div>less than 24 hours transactions. Lorem ipsum ala ba {}</div>
+            <img src={session?.user?.image} alt="" srcset="" />
           </div>
         </div>
           

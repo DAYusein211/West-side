@@ -60,7 +60,7 @@
 }
 .line
 {
-    @apply w-[100px] h-[0.5px] bg-black bg-opacity-25;  
+    @apply w-[10vw] h-[0.5px] bg-black bg-opacity-25;  
 }
 input 
 {

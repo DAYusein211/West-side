@@ -2,15 +2,20 @@
 import { connectMongoDB } from '@/lib/mongodb';
 import User from '@/models/user';
 import NextAuth from 'next-auth/next';
-import Google from 'next-auth/providers/google';
-import Github from 'next-auth/providers/github';
 import  CredentialsProvider  from 'next-auth/providers/credentials';
+import Google from 'next-auth/providers/google';
+import Facebook from 'next-auth/providers/facebook';
 import bcrypt from 'bcryptjs'
 
 export const authOptions = {
     providers: [
-    Google,
-    Github,
+    Google({
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    }), 
+    Facebook({
+
+    }),
     CredentialsProvider({name:'credentials', credentials: {}, 
     async authorize(credentials)
     {
