@@ -1,7 +1,7 @@
 import { connectMongoDB } from '@/lib/mongodb';
 import User from '@/models/user';
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs'
+
 
 export async function POST(req)
 {
@@ -15,7 +15,14 @@ export async function POST(req)
             $inc:
             {
                 balance:-amount
-            }
+            },
+            $push: {
+                transactions: {
+                  date: new Date().toLocaleDateString(),
+                  amount: -amount, 
+                  maker: 'you',
+                },
+              },
             })
         
         return NextResponse.json({message: 'User Registered'}, {status: 201});

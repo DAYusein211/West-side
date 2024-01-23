@@ -1,6 +1,6 @@
 'use client'
 import './globals.css'
-import { AiOutlineSwap, AiOutlineHome, AiOutlineUser, AiOutlineSolution } from "react-icons/ai";
+import { AiOutlineSwap, AiOutlineHome, AiOutlineUser, AiOutlineSolution } from 'react-icons/ai';
 import { AuthProvider } from './providers'
 import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
@@ -49,7 +49,7 @@ export default function RootLayout({ children })
     <html>
       <body className='h-screen overflow-hidden'>
 
-      <nav className=' absolute flex flex-col text-white right-[30px] top-[30vh] items-center space-y-5 z-20 [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)] px-[10px] py-[60px] rounded-[5px]'>
+      <nav className=' absolute flex flex-col text-white right-[20px] top-[30vh] items-center space-y-5 z-20 [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)] px-[5px] py-[60px] rounded-[5px]'>
         <Link href = '/' className='opacity-50 hover:opacity-100 duration-200 h-fit w-fit p-2'><AiOutlineHome size={25}/></Link>
         <Link href = '/will' className='opacity-50 hover:opacity-100 duration-200 h-fit w-fit p-2'><AiOutlineSolution size={25}/></Link>
         <Link href = '/transactions' className='opacity-50 hover:opacity-100 duration-200 h-fit w-fit p-2'><AiOutlineSwap size={25}/></Link>

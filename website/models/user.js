@@ -25,6 +25,11 @@ const userShcema = new Schema({
     {
         type:Number,
         required: true,
+    },
+    transactions: 
+    {
+        type:Number,
+        required:true
     }
 }, {timestamps: true}
 );

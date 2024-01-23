@@ -25,6 +25,7 @@ export default function Account()
             router.push('/account');
          
     };
+    
     window.addEventListener('mousemove', async () =>
     {  
         
@@ -50,6 +51,9 @@ export default function Account()
         }
     }
     )
+  
+
+    
 
     
     return (

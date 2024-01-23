@@ -69,7 +69,7 @@ export default function SignUp()
             {
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({sender, amount })});
+            body: JSON.stringify({sender, amount, })});
             if(send.ok)
             {
                 const form = e.target;

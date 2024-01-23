@@ -37,7 +37,7 @@ export default function SignUp()
             }
             else
             {
-                console.log("Sign up failure.")
+                console.log("Sign up failure.", await res.text())
             }
         } catch (error) {
             console.log("Error during registration:", error)
