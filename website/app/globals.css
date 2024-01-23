@@ -60,9 +60,9 @@
 }
 .line
 {
-    @apply w-[100px] h-[0.5px] bg-white bg-opacity-25;  
+    @apply w-[100px] h-[0.5px] bg-black bg-opacity-25;  
 }
 input 
 {
-   @apply rounded-[5px] w-[100%] h-[40px] py-2 px-2 bg-white focus:outline-none placeholder:text-[#4F5178] bg-opacity-5 caret-[#4F5178] text-[#4F5178];
+   @apply rounded-[5px] w-[100%] border-[1px] border-opacity-25 h-[40px] py-2 px-2 focus:outline-none caret-[#5E5E5E] text-[#5E5E5E];
 }

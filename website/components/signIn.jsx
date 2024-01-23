@@ -44,18 +44,21 @@ export default function SignIn()
         </div>
     <div className= "absolute flex w-screen h-screen items-center justify-center" >
         
-        <div className=" text-white relative flex items-center flex-col rounded-[5px] px-[15vw] py-[125px] [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)]">
-            <h1 className = "absolute top-[10px] left-[10px]">
-                Sign in 
+        <div className="py-[40px] px-[40px] flex items-center flex-col rounded-[5px] w-[35vw] h-[400px] bg-white shadow-lg">
+            
+            <form className = "flex flex-col items-center w-[90%] gap-3" onSubmit={HandleSubmit}>
+            <h1 className =" self-start font-bold">
+                Sign in to your account
             </h1>
-            <form className = "flex flex-col items-center w-[110%] gap-3" onSubmit={HandleSubmit}>
-                <input type="email" onChange = {(e) => setEmail(e.target.value)} placeholder="Email"/>
-                <input type="password" onChange = {(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button className = "bg-[#0029FF]  w-[100%] rounded-[5px] p-1">Sign in</button>
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Email</label>
+                <input type="email" onChange = {(e) => setEmail(e.target.value)} />
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Password</label>
+                <input type="password" onChange = {(e) => setPassword(e.target.value)}/>
+                <button className = "bg-[#0029FF] w-[100%] rounded-[5px] p-2 text-white font-semibold mt-[10px]">Sign in</button>
                 {error && <div className = "text-[red]">{error}</div>}
                 <div className="text-[10px] flex flex-row"> <div className="opacity-50">Don't have an account?</div> <Link href = {"signUp"} className = "font-bold">Sign up</Link></div>
                 <div className= "flex flex-row items-center gap-1">
-                    <div className = "line"></div> <div className = "opacity-25 text-[10px]">or</div> <div className = "line"></div>
+                    <div className = "line"></div> <div className = "opacity-50 text-[10px]">or</div> <div className = "line"></div>
                 </div>
             
             

@@ -2,12 +2,16 @@
 import { connectMongoDB } from '@/lib/mongodb';
 import User from '@/models/user';
 import NextAuth from 'next-auth/next';
+import Google from 'next-auth/providers/google';
+import Github from 'next-auth/providers/github';
 import  CredentialsProvider  from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs'
 
 export const authOptions = {
-    providers: 
-    [CredentialsProvider({name:'credentials', credentials: {}, 
+    providers: [
+    Google,
+    Github,
+    CredentialsProvider({name:'credentials', credentials: {}, 
     async authorize(credentials)
     {
         const {email, password} = credentials;

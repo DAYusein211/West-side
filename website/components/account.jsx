@@ -44,7 +44,7 @@ export default function Account()
                 document.querySelector('.name').innerHTML = obj.name;
                 document.querySelector('.email').innerHTML = obj.email;
                 document.querySelector('.password').innerHTML = '*******';
-                document.querySelector('.balance').innerHTML = obj.balance;
+                document.querySelector('.balance').innerHTML = obj.balance + '$';
             }
         })
             once = false;

@@ -50,17 +50,23 @@ export default function SignUp()
             <Image src={pagesWave} layout="responsive" width = {0} height= {0}/> 
         </div>
     <div className= "absolute flex w-screen h-screen items-center justify-center">
-        <div className=" text-white relative flex items-center flex-col rounded-[5px]  px-[15vw] py-[75px]  [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)]" >
-            <h1 className = "absolute top-[10px] left-[10px]">
-                Sign up
+        <div className="py-[40px] px-[40px] flex items-center flex-col rounded-[5px] w-[35vw] h-[550px] bg-white shadow-lg" >
+            
+            <form onSubmit = {handleSubmit} className = "flex flex-col items-center w-[90%] gap-3">
+            <h1 className =" self-start font-bold">
+                Create an account
             </h1>
-            <form onSubmit = {handleSubmit} className = "flex flex-col items-center w-[110%] gap-3">
-                <input onChange = { e => setName(e.target.value.trim())}type="text" placeholder="Full name"/>
-                <input onChange = { e => setEmail(e.target.value.trim())}type="email" placeholder="Email"/>
-                <input onChange = { e => setPassword(e.target.value.trim())}type="password" placeholder="Password"/>
-                <input onChange = { e => setIBAN(e.target.value.trim())}type="text" placeholder="IBAN"/>
-                <input onChange = { e => setBalance(e.target.value)}type="text" placeholder="USD"/>
-                <button className = "bg-[#0029FF]  w-[100%] rounded-[5px] p-1">Sign up</button>
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Full name</label>
+                <input onChange = { e => setName(e.target.value.trim())}type="text"/>
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Email</label>
+                <input onChange = { e => setEmail(e.target.value.trim())}type="email" />
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Password</label>
+                <input onChange = { e => setPassword(e.target.value.trim())}type="password" />
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">IBAN</label>
+                <input onChange = { e => setIBAN(e.target.value.trim())}type="text"/>
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Balance</label>
+                <input onChange = { e => setBalance(e.target.value)}type="text"/>
+                <button className = "bg-[#0029FF]  w-[100%] rounded-[5px] p-2 text-white mt-[10px]">Sign up</button>
                 {error &&(<div className = "text-[red]">{error}</div>) }
                 
             </form>

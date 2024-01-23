@@ -100,24 +100,7 @@ export default function SignUp()
         
 }
     
-    return <div className="grid place-items-center h-screen">
-    <div className = "shadow-md p-3 rounded-r-sm ">
-        
-        <form onSubmit = {handleSubmit} className = " text-2xl pr-[40px] pl-[40px] pt-[70px] pb-[40px] border-[1px] border-[#9ad0367f] flex flex-col gap-2">
-        
-            <input onChange = { e => setReciever(e.target.value.trim())}type="text" placeholder="Reciever"/>
-            <input onChange = { e => setAmount(e.target.value.trim())}type="text" placeholder="Amount"/>
-            <button className = "w-[60px] bg-[rgb(1,1,1,0)] text-xl  text-[#243527] hover:text-[#99D036] duration-100">Send</button>
-            
-            {error &&(<div className = "text-sm text-red-400">{error}</div>) }
-            
-        </form>
-        <div className="relative top-[-60px] left-[180px]">
-        <button onClick={handleAccountBalance} className="w-[125px] bg-[rgb(1,1,1,0)] text-xl  text-[#243527] hover:text-[#99D036] duration-100">Get Balance</button>
-        <div className="flex flex-row">
-        <div className="text-[#243527]">Balance: </div><div className="acc text-[#243527]"></div>
-        </div>
-        </div>
-    </div>
+    return <div>
+    
 </div>
 }
