@@ -33,15 +33,13 @@ Server based website, where you can make transactions between users
 
 ## Partners 
 <img src="/Documents/Logo.png" width = "40px"/>
-## Installation
-```
-1.Step - clone the repo
-git clone https://github.com/DAYusein211/opium.git
-2.Step - make sure you have node.j installed in your device, if you don't
-https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi
-3. Step - go into the 'website' folder and download 'next' by making a new terminal and typing in:
-npm install next
-4. Step npm run dev
-Enjoy!
 
+
+## ⚙ Installation
+```
+You can download our project by using the green "Code" button.
+
+Or by pasting the following code in your CMD:
+git clone https://github.com/DAYusein211/West-side.git 
+ 
   
