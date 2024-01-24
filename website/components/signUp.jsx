@@ -9,7 +9,7 @@ export default function SignUp()
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [IBAN, setIBAN] = useState("");
+    const [pin, setPin] = useState("");
     const [balance, setBalance] = useState(0);
     const [error, setError] = useState("");
     const router = useRouter();
@@ -17,7 +17,7 @@ export default function SignUp()
     const handleSubmit = async (e) => 
     {
         e.preventDefault();
-        if(!name || !email || !password || !IBAN || !balance)
+        if(!name || !email || !password || !pin || !balance)
         {
             setError("Fill up the form!")
         return;
@@ -28,12 +28,12 @@ export default function SignUp()
             {
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({name, email, password, IBAN, balance})});
+            body: JSON.stringify({name, email, password, pin, balance})});
             if(res.ok)
             {
                 const form = e.target;
                 form.reset();
-                router.push("/")
+                router.push("/signIn")
             }
             else
             {
@@ -62,12 +62,12 @@ export default function SignUp()
                 <input onChange = { e => setEmail(e.target.value.trim())}type="email" />
                 <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Password</label>
                 <input onChange = { e => setPassword(e.target.value.trim())}type="password" />
-                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">IBAN</label>
-                <input onChange = { e => setIBAN(e.target.value.trim())}type="text"/>
+                <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Crypto wallet PIN</label>
+                <input onChange = { e => setPin(e.target.value.trim())}type="text"/>
                 <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Balance</label>
                 <input onChange = { e => setBalance(e.target.value)}type="text"/>
                 <button className = "bg-[#0066FF] hover:bg-[#2A7DFA] duration-200 w-[100%] rounded-[5px] p-2 text-[10px] md:text-[16px] text-white mt-[10px]">Sign up</button>
-                {error &&(<div className = "text-[red]">{error}</div>) }
+                {error &&(<div className = "text-[#eb3e3e]">{error}</div>) }
                 
             </form>
         </div>

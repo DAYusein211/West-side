@@ -26,24 +26,18 @@ export default function SignIn()
 
            if(res.error)
            {
-               setError("Invalid password or username");
+               setError("Invalid email or password");
                 return;
             }   
            router.replace("/");
         }
         
-            catch (error) 
-            {
-            
-            }
-    }
-    const onClick = (provider) =>
-    {
-        signIn(provider, 
+        catch (error) 
         {
-                callbackUrl: 'http://localhost:3000'
-        })
+            
+        }
     }
+    
     return (
     <div>
         <div className= "absolute top-[10px] left-[20px] text-white font-bold z-10">West side</div>
@@ -63,14 +57,8 @@ export default function SignIn()
                 <label className="w-[100%] text-left text-[12px] mb-[-10px] text-[#5E5E5E]">Password</label>
                 <input type="password" onChange = {(e) => setPassword(e.target.value)}/>
                 <button className = "bg-[#0066FF] hover:bg-[#2A7DFA] duration-200 w-[100%] rounded-[5px] p-2 text-[10px] md:text-[16px] text-white font-semibold mt-[10px]">Sign in</button>
-                {error && <div className = "text-[red]">{error}</div>}
-                <div className="text-[8px] sm:text-[10px] flex flex-row"> <div className="opacity-50">Don't have an account?</div> <Link href = {"signUp"} className = "font-bold">Sign up</Link></div>
-                <div className= "flex flex-row items-center gap-1">
-                    <div className = "line"></div> <div className = "opacity-50 text-[10px]">or</div> <div className = "line"></div>
-                    <button onClick={() => onClick('google')}>Google</button>
-                </div>
-            
-            
+                {error && <div className = "text-[#eb3e3e]">{error}</div>}
+                <div className="text-[8px] sm:text-[16px] flex flex-row"> <div className="opacity-50">Don't have an account?</div> <Link href = {"signUp"} className = "font-semibold hover:font-bold duration-200">Sign up</Link></div>
             </form>
         </div>
     </div>

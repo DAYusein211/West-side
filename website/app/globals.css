@@ -2,65 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inika&family=Inria+Serif:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Inria+Serif:wght@300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 ::selection
 {
-    background:none;
-    color:#ff6a00;
-}
-.rec1
-{
-    background-color: #FF0000;
-    width: 100vw;
-    height:100vh;
-}
-.pin-spacer
-{
-    width:0 !important;
-    height:0 !important;
+    @apply bg-none text-[#ff6a00];
 }
 
-
-.cursor
-{
-
-    z-index: 10000;
-    background-color: #ff00003b;
-    pointer-events: none;
-    position:absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    border: 1px solid #FF0000;
-
-    transition: width .1s, height .1s;
-}
-
-.link
-{
-    @apply self-center;
-    font-weight: 100;
-    font-size: 24px;
-    color: rgba(255, 255, 255, 0.432);
+.open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
     
-    transition-duration: 0.3s;
-}
-
-.link:hover
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+  }
+*
 {
-    color:#FF0000;
-    
-}
-
-.myFont
-{
-    font-family: 'Inika', serif;
-
-    font-family: 'Inria Serif', serif;
-}
-.line
-{
-    @apply w-[10vw] h-[0.5px] bg-black bg-opacity-25;  
+    @apply open-sans;
 }
 input 
 {

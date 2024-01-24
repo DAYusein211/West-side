@@ -11,25 +11,25 @@ export default function DigitalWill()
         <div className="absolute w-[100vw] h-[500px]">
             <Image src={pagesWave} layout="responsive" width = {0} height= {0}/> 
         </div>
-        <div className="absolute top-[10px] left-[20px] flex flex-col gap-1 text-white">
+        <div className="absolute top-[150px] left-[32vw] flex flex-col items-center gap-1 text-white">
             <h1 className="text-3xl font-bold">Digital Will</h1>
-            <div className=" w-[25vw]">Choose someone reliable to inherit your will! </div>
+            <div className=" w-[35vw] text-center">Choose how your digital assets are passed on—whether to family or friends—ensuring your legacy is handled just the way you want. </div>
         </div>
-        <div className="absolute top-[50px] flex w-screen h-screen justify-center items-center text-white">
+        <div className="absolute top-[50px] flex w-screen h-screen justify-center items-center text-[#5E5E5E]">
             <div className="flex flex-col justify-between w-[350px] h-[600px] gap-16 md:flex-row md:h-[300px] md:w-[60vw]">
-            <Link href = "/Family" className="w-[100%] h-[100%] [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)] rounded-[5px] opacity-90 hover:opacity-100 duration-200">
+            <Link href = "/Family" className="w-[100%] h-[100%] bg-white rounded-[5px] shadow-lg">
                     <div className="absolute">
                         <div className="absolute top-[20px] left-[20px] flex flex-col gap-2">
-                            <h1 className="text-3xl">Family</h1>
-                            <div className=" w-[25vw]">A relative is a smart choice!</div>
+                            <h1 className="text-3xl text-[#3C3C3C]">Family</h1>
+                            
                         </div>
                     </div>
                 </Link>
-            <Link href = "/Friends" className="w-[100%] h-[100%] [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)] rounded-[5px] opacity-90 hover:opacity-100 duration-200">
+            <Link href = "/Friends" className="w-[100%] h-[100%] bg-white rounded-[5px]  shadow-lg">
                 <div className="absolute  w-[100%]">
                     <div className="absolute top-[20px] left-[20px] flex flex-col gap-2">
-                        <h1 className="text-3xl">Friends</h1>
-                        <div className=" w-[25vw]">Someone you can trust is a good approach!</div>
+                        <h1 className="text-3xl text-[#3C3C3C]">Friends</h1>
+
                     </div>
                 </div>
             </Link>

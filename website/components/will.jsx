@@ -7,11 +7,14 @@ import pagesWave from '@/assets/pagesWave.svg';
 export default function Will({data})
 {
     const [reciever, setReciever] = useState("");
-    let amount = 0;
     const [percentage, setPercentage] = useState("");
     const [error, setError] = useState("");
+    const [message, setMessage] = useState("");
+
     const router = useRouter();
     const { data: session, status } = useSession();
+
+    let amount = 0;
     const sender = session?.user?.name;
 
     const handleSubmit = async (e) => 
@@ -19,10 +22,10 @@ export default function Will({data})
         
         e.preventDefault();
         
-        if(!reciever || !percentage)
+        if(!reciever || !percentage || !message)
         {
-            setError("Fill in all of it!");
-        return;
+            setError("Not all fields have been filled!");
+            return;
         }
        
         const data = await fetch("api/accounts", 
@@ -62,12 +65,12 @@ export default function Will({data})
             {
             method: "POST", 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({reciever, amount})});
+            body: JSON.stringify({sender, reciever, amount, message})});
             if(receive.ok)
             {
                 const form = e.target;
                 form.reset(); 
-                router.push('/will')
+                router.push('/will');
             }
            
 }
@@ -77,14 +80,14 @@ export default function Will({data})
         <Image src={pagesWave} layout="responsive" width = {0} height= {0}/> 
     </div>
     <div className="absolute top-[10px] left-[20px] flex flex-col gap-1 text-white">
-        <h1 className="text-3xl font-bold">Digital Will</h1>
+        <h1 className="text-3xl font-bold ">Digital Will</h1>
         <div className=" w-[25vw]">Choose someone reliable to inherit your will!</div>
     </div>
-    <div className="absolute w-screen h-screen flex justify-center items-center text-white">
-        <div className="absolute w-[50%] flex gap-10 h-[400px] [background:linear-gradient(180deg,rgb(15.51,0,31.01)_0%,rgb(0.32,21.28,95.61)_100%)] p-10 rounded-[5px]">
+    <div className="absolute w-screen h-screen flex justify-center items-center">
+        <div className="absolute w-[50%] flex gap-10 h-[400px] bg-white p-10 rounded-[5px] shadow-lg">
             <div className="flex flex-col gap-1 w-[40%]">
-                <h1 className="text-3xl font-bold">{data}</h1>
-                <div className=" w-[100%]">Your will receive your will in 2 months. </div>
+                <h1 className="text-3xl font-bold text-[#3C3C3C]">{data}</h1>
+                <div className=" w-[100%] text-[#5E5E5E]">They will receive your Will immediately, which includes your crypto wallet!</div>
             </div>
             <form className="w-[60%] flex flex-col gap-5" onSubmit={handleSubmit}>
                 <div className="flex flex-row gap-10">
@@ -92,17 +95,15 @@ export default function Will({data})
                     <input onChange = { e => {if(e.target.value <= 100)setPercentage(e.target.value.trim());else setPercentage(100)}} type="text" placeholder="%"/>
                 </div>
                 <div>
-                    <label className="text-[#FFD100] opacity-25">Leave a final message.</label>
-                    <input type="text" placeholder="Message" className="bg-[#FFD203] bg-opacity-15 caret-[#FFD100] text-[#FFD100] opacity-25 placeholder:text-[#FFD100]"/>
+                    <label className="text-[#5E5E5E]">Leave them a message</label>
+                    <input type="text" placeholder="Message" onChange={e => setMessage(e.target.value.trim())}/>
                 </div>
-                <button className="bg-[#0029FF]  w-[100%] rounded-[5px] p-1">Confirm</button>
+                <button className="bg-[#0066FF] hover:bg-[#2A7DFA] duration-200 text-white font-semibold  w-[100%] rounded-[5px] p-1">Confirm</button>
+                <div className="text-[#eb3e3e]">{error}</div>
             </form>
+            
         </div>
     </div>
     
 </main>
 }
-
-/*
-
-*/

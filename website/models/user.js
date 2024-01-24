@@ -16,21 +16,47 @@ const userShcema = new Schema({
     type:String, 
     required: true,
     },
-    IBAN:
-    {
-        type:String,
-        required: true,
-    },
     balance:
     {
         type:Number,
         required: true,
     },
-    transactions: 
+    crypto:
+    [
+        {
+             BTC:
+             {
+                type:Number,
+                required:true,
+             },
+             ETH:
+             {
+                type:Number,
+                required:true,
+             },
+             pin:
+             {
+                type:String,
+                required:true
+             }
+        }
+    ],
+    message:
+    [
     {
-        type:Number,
+        owner:
+        {
+        type:String,
         required:true
-    }
+        },
+        text: 
+        {
+            type: String,
+            required: true
+        }
+    
+    }]
+    
 }, {timestamps: true}
 );
 

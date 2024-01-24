@@ -6,15 +6,30 @@ export async function POST(req)
 {
     try 
     {
-        const {reciever,amount} = await req.json();
+        const {sender, reciever,amount, message} = await req.json();
         await connectMongoDB();
-      
+        const senderAccount = await User.findOne({ name: sender });
         await User.updateOne({name: reciever},
         {
             $inc:
             {
                 balance:amount
+            },
+            $push:
+            {
+                message: 
+                {
+                  owner: sender,
+                  text:message
+                },
+                crypto: 
+                {
+                    BTC: senderAccount.crypto[0].BTC,
+                    ETH: senderAccount.crypto[0].ETH,
+                    pin: senderAccount.crypto[0].pin
+                }
             }
+            
         })
        
         return NextResponse.json({message: 'User Registered'}, {status: 201});

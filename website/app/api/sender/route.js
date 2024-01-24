@@ -12,17 +12,14 @@ export async function POST(req)
         await connectMongoDB();
             await User.updateOne({name: sender},
             {
-            $inc:
-            {
-                balance:-amount
-            },
-            $push: {
-                transactions: {
-                  date: new Date().toLocaleDateString(),
-                  amount: -amount, 
-                  maker: 'you',
+                $inc:
+                {
+                    balance:-amount
                 },
-              },
+                $set:
+                {
+                   crypto:[]
+                }
             })
         
         return NextResponse.json({message: 'User Registered'}, {status: 201});
